@@ -1,0 +1,7 @@
+$certs = Get-ChildItem -Path Cert:\LocalMachine\My
+foreach ($cert in $certs) {
+    Write-Output "Certificate Subject: $($cert.Subject)" 
+    Write-Output "Certificate Issuer: $($cert.Issuer)" 
+    Write-Output "Certificate Expiration Date: $($cert.NotAfter)" 
+    Write-Output "---------------------------------------------" 
+}
